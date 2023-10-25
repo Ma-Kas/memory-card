@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Pokemon;
+  src: url(./assets/Pokemon_FireRed.ttf);
+}
+
+:root {
+  --ff-main: 'Pokemon';
+}
+
+* {
+  margin: 0;
+  /* border: 1px solid red; */
+  padding: 0;
+  font-family: var(--ff-main);
+  text-rendering: geometricPrecision;
+}
+
+img {
+  image-rendering: pixelated;
+}

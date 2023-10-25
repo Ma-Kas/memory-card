@@ -1,0 +1,23 @@
+.main {
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 100px;
+  background-color: blue;
+}
+
+.main-play-area {
+  flex: 1;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.pkmn-sprite {
+  width: 100%;
+}
