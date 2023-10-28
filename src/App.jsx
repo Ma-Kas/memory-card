@@ -1,21 +1,54 @@
+import * as CONFIG from './config/config.json';
 import { useState } from 'react';
-import Card from './components/Card';
+
+import Pokemon from './apis/Pokemon';
+import LoadingScreen from './components/LoadingScreen';
+import MainMenu from './components/MainMenu';
+import GameLoop from './components/GameLoop';
 import './App.css';
 
-async function getPkmnData(pkmnId) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmnId}`);
-  const pkmnData = await res.json();
-  return pkmnData;
-}
-
 function App() {
-  const [pokemon, setPokemon] = useState(null);
+  const [gameState, setGameState] = useState(CONFIG.MAIN_MENU);
+  const [isLoading, setLoading] = useState(false);
+  const [pokemonTeam, setPokemonTeam] = useState([]);
+  const [clickedCards, setClickedCards] = useState([]);
+  const { getRandomPkmnList } = Pokemon();
+
+  const createPokemon = async (amount) => {
+    setGameState(CONFIG.GAME);
+    setLoading(true);
+    const randomPkmn = getRandomPkmnList(amount);
+    setPokemonTeam(await randomPkmn);
+    setLoading(false);
+  };
+
+  const handleCardClick = (e) => {
+    const idToPush = e.target.dataset['id'];
+    if (clickedCards.includes(idToPush)) {
+      console.log('you lose');
+      // Popup Lose Modal
+    } else {
+      setClickedCards([...clickedCards, idToPush]);
+      console.log('added');
+      // Increment score
+      // Flip cards around, shuffle cards, flip back
+    }
+  };
 
   return (
     <div className='main'>
       <header className='header'></header>
       <div className='main-play-area'>
-        <Card></Card>
+        {gameState === CONFIG.MAIN_MENU ? (
+          <MainMenu startGame={(amount) => createPokemon(amount)}></MainMenu>
+        ) : isLoading ? (
+          <LoadingScreen></LoadingScreen>
+        ) : (
+          <GameLoop
+            pkmnData={pokemonTeam}
+            onCardClick={handleCardClick}
+          ></GameLoop>
+        )}
       </div>
     </div>
   );

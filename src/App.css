@@ -12,6 +12,7 @@
 
 .main-play-area {
   flex: 1;
+  padding: 2rem;
   background-color: red;
   display: flex;
   justify-content: center;

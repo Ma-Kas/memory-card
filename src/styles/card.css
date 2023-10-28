@@ -1,17 +1,28 @@
 @import '../index.css';
 
 .card {
-  height: 300px;
+  height: 250px;
   width: 150px;
   background-color: white;
   padding: 1rem;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card-content {
+  pointer-events: none;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.pkmn-name {
+  font-size: var(--fs-card);
+  text-align: center;
+  text-transform: capitalize;
 }

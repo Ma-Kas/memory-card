@@ -5,6 +5,10 @@
 
 :root {
   --ff-main: 'Pokemon';
+  --fs-card: 1.2rem;
+
+  --card-width: 150px;
+  --card-height: 250px;
 }
 
 * {

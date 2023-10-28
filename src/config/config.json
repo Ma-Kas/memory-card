@@ -1,0 +1,8 @@
+{
+  "MAX_PKMN_ID": 1017,
+  "DIFFICULTY_EASY": 4,
+  "DIFFICULTY_HARD": 16,
+  "DIFFICULTY_IMPOSSIBLE": 1017,
+  "MAIN_MENU": "main-menu",
+  "GAME": "playing"
+}
