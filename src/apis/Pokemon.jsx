@@ -4,7 +4,12 @@ function Pokemon() {
   const getPkmnData = async (pkmnId) => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmnId}`);
     const { id, name, sprites } = await res.json();
-    const image = sprites['front_default'];
+    let image = sprites['front_default'];
+    // Missing pokemon sprites in API database fallback to 'Shiny Ditto'
+    image =
+      image === null
+        ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png'
+        : image;
     return { id, name, image };
   };
 

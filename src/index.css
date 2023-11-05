@@ -7,8 +7,19 @@
   --ff-main: 'Pokemon';
   --fs-card: 1.2rem;
 
+  --clr-white: #f8f8f8;
+  --clr-font: #606060;
+  --clr-font-shadow: #d0d0c8;
+  --clr-accent-light: #e0a028;
+  --clr-accent: #d04028;
+  --clr-accent-dark: #902008;
+
   --card-width: 150px;
   --card-height: 250px;
+
+  --frame-border-image: url('./assets/frame.png');
+  --frame-border: 21px;
+  --frame-border-slice: 21; /* Needs to match border */
 }
 
 * {
@@ -17,6 +28,11 @@
   padding: 0;
   font-family: var(--ff-main);
   text-rendering: geometricPrecision;
+  /* box-sizing: border-box; */
+}
+
+.disable-scroll {
+  overflow-y: hidden;
 }
 
 img {

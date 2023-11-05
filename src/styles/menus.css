@@ -1,0 +1,49 @@
+@import '../index.css';
+
+.game-end-container {
+  background-color: rgba(0, 0, 0, 0.508);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+}
+
+.main-menu,
+.game-end-modal {
+  background-color: var(--clr-white);
+  color: var(--clr-font);
+  text-shadow: 1px 1px 0 var(--clr-font-shadow);
+  padding: 1rem;
+
+  border: var(--frame-border) solid blue;
+  border-radius: var(
+    --frame-border
+  ); /* Necessary to hide a white pixel of the background */
+
+  border-image: var(--frame-border-image);
+  border-width: var(--frame-border);
+  border-image-slice: var(--frame-border-slice);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.difficulty-selection-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  color: var(--clr-font);
+  text-shadow: 1px 1px 0 var(--clr-font-shadow);
+  padding: 0.5rem 0.75rem;
+}

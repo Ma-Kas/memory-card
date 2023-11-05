@@ -1,6 +1,6 @@
 import * as CONFIG from '../config/config.json';
 import { useState } from 'react';
-import '../styles/main-menu.css';
+import '../styles/menus.css';
 
 function MainMenu({ startGame }) {
   const [difficulty, setDifficulty] = useState(CONFIG.DIFFICULTY_HARD);
@@ -9,7 +9,8 @@ function MainMenu({ startGame }) {
     startGame(difficulty);
   };
   return (
-    <div className='main-menu'>
+    <div className='menus main-menu'>
+      <h2 className='menu-header'>What game would you like to play?</h2>
       <div className='difficulty-selection-container'>
         <button
           type='button'
