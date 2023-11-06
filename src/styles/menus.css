@@ -1,6 +1,7 @@
 @import '../index.css';
 
 .game-end-container {
+  z-index: 9999;
   background-color: rgba(0, 0, 0, 0.508);
   display: flex;
   justify-content: center;
@@ -11,10 +12,11 @@
 
 .main-menu,
 .game-end-modal {
+  min-width: 40%;
   background-color: var(--clr-white);
   color: var(--clr-font);
   text-shadow: 1px 1px 0 var(--clr-font-shadow);
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   border: var(--frame-border) solid blue;
   border-radius: var(
@@ -27,11 +29,28 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
+
+  gap: 2rem;
 }
 
-.difficulty-selection-container {
+.main-menu {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.game-end-modal {
+  justify-content: center;
+  align-items: center;
+}
+
+.difficulty-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.difficulty-button-container,
+.result-button-container {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -41,9 +60,15 @@
   display: none;
 }
 
+.btn-start,
+.btn-quit,
+.btn-again {
+  font-size: var(--fs-pkmn-name);
+}
+
 button {
   background-color: transparent;
   color: var(--clr-font);
   text-shadow: 1px 1px 0 var(--clr-font-shadow);
-  padding: 0.5rem 0.75rem;
+  font-size: var(--fs-regular);
 }

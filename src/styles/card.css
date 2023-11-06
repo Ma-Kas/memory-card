@@ -1,10 +1,30 @@
 @import '../index.css';
 
 .card {
-  height: 250px;
-  width: 150px;
-  background-color: var(--clr-white);
+  height: calc(var(--card-height) + (2 * var(--frame-border)));
+  width: calc(var(--card-width) + (2 * var(--frame-border)));
+  background: transparent;
+
+  perspective: 1000px;
+}
+
+.card:hover .card-inner:not(.flip) {
+  cursor: pointer;
+}
+
+.card-inner.flip {
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   color: var(--clr-font);
+  background-color: var(--clr-white);
   text-shadow: 1px 1px 0 var(--clr-font-shadow);
   padding: 0.5rem;
 
@@ -16,16 +36,23 @@
   border-image: var(--frame-border-image);
   border-width: var(--frame-border);
   border-image-slice: var(--frame-border-slice);
+
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 }
 
-.card:hover {
-  cursor: pointer;
-}
-
-.card-content {
-  pointer-events: none;
-  height: 100%;
+/* Position the front and back side */
+.card-inner {
+  position: relative;
   width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front {
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -33,8 +60,12 @@
   align-items: center;
 }
 
+.card-back {
+  transform: rotateY(180deg);
+}
+
 .pkmn-name {
-  font-size: var(--fs-card);
+  font-size: var(--fs-pkmn-name);
   text-align: center;
   text-transform: capitalize;
 }

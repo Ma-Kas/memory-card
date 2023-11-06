@@ -1,0 +1,7 @@
+@import '../index.css';
+
+.loading-screen {
+  font-size: 2.4rem;
+  color: var(--clr-font);
+  text-shadow: 1px 1px 0 var(--clr-font-shadow);
+}

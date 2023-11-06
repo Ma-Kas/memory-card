@@ -1,25 +1,51 @@
 .main {
-  min-width: 320px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-width: min-content;
+  background-image: var(--bg-image);
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.header-section {
+  padding: var(--padding-sides);
 }
 
 .header {
-  height: 100px;
-  background-color: blue;
+  min-height: max-content;
+  width: 100%;
+  color: var(--clr-font);
+  background-color: var(--clr-white);
+  text-shadow: 1px 1px 0 var(--clr-font-shadow);
+  padding: 0.5rem 2rem;
+
+  border: var(--frame-border) solid blue;
+  border-radius: var(
+    --frame-border
+  ); /* Necessary to hide a white pixel of the background */
+
+  border-image: var(--frame-border-image);
+  border-width: var(--frame-border);
+  border-image-slice: var(--frame-border-slice);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.main-play-area {
-  flex: 1;
-  padding: 2rem;
-  background-color: red;
+.header-title {
+  font-size: var(--fs-header);
+  font-weight: bold;
+}
+
+.score-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-play-section {
+  min-height: 100vh;
+  padding: var(--padding-sides);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 img.pkmn-sprite {

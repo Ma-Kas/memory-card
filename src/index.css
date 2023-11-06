@@ -5,7 +5,9 @@
 
 :root {
   --ff-main: 'Pokemon';
-  --fs-card: 1.2rem;
+  --fs-regular: 1rem;
+  --fs-pkmn-name: 1.2rem;
+  --fs-header: 1.5rem;
 
   --clr-white: #f8f8f8;
   --clr-font: #606060;
@@ -17,9 +19,15 @@
   --card-width: 150px;
   --card-height: 250px;
 
+  --bg-image: url('./assets/background.png');
+
   --frame-border-image: url('./assets/frame.png');
   --frame-border: 21px;
   --frame-border-slice: 21; /* Needs to match border */
+
+  --padding-sides: 2rem;
+  --padding-top: 2rem;
+  --padding-bottom: 2rem;
 }
 
 * {
@@ -28,13 +36,23 @@
   padding: 0;
   font-family: var(--ff-main);
   text-rendering: geometricPrecision;
-  /* box-sizing: border-box; */
+  image-rendering: pixelated;
+  box-sizing: border-box;
 }
 
 .disable-scroll {
   overflow-y: hidden;
 }
 
-img {
-  image-rendering: pixelated;
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Utility Classes */
+.bold {
+  font-weight: bold;
 }

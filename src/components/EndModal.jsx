@@ -17,10 +17,14 @@ function EndModal({
         </h2>
         <p className='result-score'>{`Your score is ${currentScore}/${maxScore}`}</p>
         <div className='result-button-container'>
-          <button type='button' className='btn-again' onClick={onPlayAgain}>
+          <button
+            type='button'
+            className='btn-again | bold'
+            onClick={onPlayAgain}
+          >
             Play Again
           </button>
-          <button type='button' className='btn-quit' onClick={onQuit}>
+          <button type='button' className='btn-quit | bold' onClick={onQuit}>
             Quit
           </button>
         </div>
