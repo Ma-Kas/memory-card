@@ -1,5 +1,4 @@
-// import * as CONFIG from '../config/config.json';
-// import { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/menus.css';
 
 function EndModal({
@@ -32,5 +31,13 @@ function EndModal({
     </div>
   );
 }
+
+EndModal.propTypes = {
+  endCondition: PropTypes.string,
+  currentScore: PropTypes.number,
+  maxScore: PropTypes.number,
+  onQuit: PropTypes.func,
+  onPlayAgain: PropTypes.func,
+};
 
 export default EndModal;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/card.css';
 
 function Card({ pkmnData, onCardClick }) {
@@ -13,5 +14,10 @@ function Card({ pkmnData, onCardClick }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  pkmnData: PropTypes.object,
+  onCardClick: PropTypes.func,
+};
 
 export default Card;

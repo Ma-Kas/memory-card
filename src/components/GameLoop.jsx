@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from './Card';
 import '../styles/game-loop.css';
 
@@ -10,5 +11,10 @@ function GameLoop({ pkmnData, onCardClick }) {
     </div>
   );
 }
+
+GameLoop.propTypes = {
+  pkmnData: PropTypes.array,
+  onCardClick: PropTypes.func,
+};
 
 export default GameLoop;

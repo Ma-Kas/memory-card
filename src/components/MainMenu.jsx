@@ -1,5 +1,6 @@
 import * as CONFIG from '../config/config.json';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/menus.css';
 
 function MainMenu({ startGame }) {
@@ -64,5 +65,9 @@ function MainMenu({ startGame }) {
     </div>
   );
 }
+
+MainMenu.propTypes = {
+  startGame: PropTypes.func,
+};
 
 export default MainMenu;
